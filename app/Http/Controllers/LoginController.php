@@ -11,19 +11,18 @@ class LoginController extends Controller
 {
     public function index()
     {
-        $title = "Users";
-        return view("login", compact("title"));
+        if (!session("email")) {
+            $title = "Users";
+            return view("login", compact("title"));
+        } else {
+            return redirect()->to("dashboard");
+        }
+
     }
     public function store(request $request)
     {
-        $request->validate([
-            "email" => "required|email",
-            "password" => "required"
-        ]);
-
-        $credentials = $request->only("email", "password");
-        $users = Users::where('email', $credentials['email'])->first();
-        if (password_verify($credentials['password'], $users->password)) {
+        $users = Users::where('email', $request->email)->first();
+        if (sha1($request->password) == $users->password) {
             session(['email' =>  $users->email]);
             session(['nama' =>  $users->nama]);
             session(['level' =>  $users->id_level]);

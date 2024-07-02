@@ -34,13 +34,14 @@ class UserController extends Controller
             "id_level" => $request->id_level,
             "nama" => $request->nama,
             "email"  => $request->email,
-            "password" => Hash::make($request->password)
+            "password" => sha1($request->password)
         ]);
         return redirect()->to("user")->with('message', 'Data berhasil ditambah');
     }
     public function update(request  $request, string $id)
     {
-        if ("password" == sha1($request->password)) {
+        $users = Users::find($id);
+        if ($users->password == $request->password) {
             users::where("id", $id)->update([
                 "id_level" => $request->id_level,
                 "nama" => $request->nama,

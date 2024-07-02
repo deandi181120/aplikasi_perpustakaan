@@ -186,6 +186,30 @@
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
     <!-- Control sidebar content goes here -->
+    <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+
+          <li class="nav-item">
+            <a href="{{route("user.index")}}" class="nav-link">
+              <i class="nav-icon far fa-user"></i>
+              <p>
+                {{session("nama")}}
+              </p>
+            </a>
+          </li>
+          <li class="nav-header">Lainnya</li>
+          <li class="nav-item">
+            <a href="{{route("logout")}}" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Logout
+              </p>
+            </a>
+          </li>
+
+      </nav>
   </aside>
   <!-- /.control-sidebar -->
 </div>

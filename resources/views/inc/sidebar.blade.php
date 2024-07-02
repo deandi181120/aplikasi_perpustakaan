@@ -13,7 +13,7 @@
             <i class="fas fa-user fa-fw"></i>
         </div>
         <div class="info">
-          <a href="#" class="d-block">USERNAME</a>
+          <a href="#" class="d-block"> {{session("nama")}}</a>
         </div>
       </div>
 
@@ -48,33 +48,15 @@
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-chart-pie"></i>
               <p>
-                Charts
+                Master Data
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/charts/chartjs.html" class="nav-link">
+                <a href="{{route("buku.index")}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>ChartJS</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/charts/flot.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Flot</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/charts/inline.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Inline</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/charts/uplot.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>uPlot</p>
+                  <p>Buku</p>
                 </a>
               </li>
             </ul>
@@ -85,10 +67,19 @@
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-table"></i>
               <p>
-                Tables
+                Anggota
                 <i class="fas fa-angle-left right"></i>
               </p>
             </a>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="{{route("anggota.index")}}" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Anggota</p>
+                  </a>
+                </li>
+              </ul>
+          </li>
 
 
           <li class="nav-header">EXAMPLES</li>

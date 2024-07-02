@@ -9,7 +9,19 @@ class DashboardController extends Controller
     //index Dashboard Controller
     public function index()
     {
-        $title = "Dashboard";
-        return view("dashboard.index", compact("title"));
+        if (session("email")) {
+            $title = "Dashboard";
+            return view("dashboard.index", compact("title"));
+        } else {
+            return redirect()->to("login");
+        }
+    }
+
+    public function logout()
+    {
+        session(["email" => null]);
+        session(['nama' =>  null]);
+        session(['level' =>  null]);
+        return redirect()->to("login");
     }
 }

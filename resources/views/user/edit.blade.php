@@ -5,7 +5,7 @@
 
 <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Tambah <small>Users</small></h3>
+                <h3 class="card-title">Edit <small>Users</small></h3>
               </div>
               <!-- /.card-header -->
               <!-- form start -->
@@ -37,7 +37,7 @@
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-primary">Kirim</button>
+                  <button type="submit" class="btn btn-primary">Edit</button>
                 </div>
               </form>
             </div>
